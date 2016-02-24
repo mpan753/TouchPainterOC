@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		E68461E91C7DAEFF0028B2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E68461E81C7DAEFF0028B2CF /* main.m */; };
 		E68461EC1C7DAEFF0028B2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E68461EB1C7DAEFF0028B2CF /* AppDelegate.m */; };
-		E68461EF1C7DAEFF0028B2CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68461EE1C7DAEFF0028B2CF /* ViewController.m */; };
 		E68461F21C7DAEFF0028B2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68461F01C7DAEFF0028B2CF /* Main.storyboard */; };
 		E68461F41C7DAEFF0028B2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68461F31C7DAEFF0028B2CF /* Assets.xcassets */; };
 		E68461F71C7DAEFF0028B2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68461F51C7DAEFF0028B2CF /* LaunchScreen.storyboard */; };
 		E68462021C7DAEFF0028B2CF /* TouchPainterOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E68462011C7DAEFF0028B2CF /* TouchPainterOCTests.m */; };
 		E684620D1C7DAEFF0028B2CF /* TouchPainterOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E684620C1C7DAEFF0028B2CF /* TouchPainterOCUITests.m */; };
+		E684621C1C7DAFCD0028B2CF /* Scribble.m in Sources */ = {isa = PBXBuildFile; fileRef = E684621B1C7DAFCD0028B2CF /* Scribble.m */; };
+		E68462201C7DAFE40028B2CF /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E684621E1C7DAFE40028B2CF /* CanvasViewController.m */; };
+		E68462211C7DAFE40028B2CF /* CanvasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E684621F1C7DAFE40028B2CF /* CanvasViewController.xib */; };
+		E68462251C7DB0080028B2CF /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68462231C7DB0080028B2CF /* PaletteViewController.m */; };
+		E68462261C7DB0080028B2CF /* PaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68462241C7DB0080028B2CF /* PaletteViewController.xib */; };
+		E684622A1C7DB1560028B2CF /* CoordinatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68462291C7DB1560028B2CF /* CoordinatingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		E68461E81C7DAEFF0028B2CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E68461EA1C7DAEFF0028B2CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E68461EB1C7DAEFF0028B2CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E68461ED1C7DAEFF0028B2CF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E68461EE1C7DAEFF0028B2CF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E68461F11C7DAEFF0028B2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E68461F31C7DAEFF0028B2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E68461F61C7DAEFF0028B2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,16 @@
 		E68462081C7DAEFF0028B2CF /* TouchPainterOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TouchPainterOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E684620C1C7DAEFF0028B2CF /* TouchPainterOCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchPainterOCUITests.m; sourceTree = "<group>"; };
 		E684620E1C7DAEFF0028B2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E684621A1C7DAFCD0028B2CF /* Scribble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scribble.h; sourceTree = "<group>"; };
+		E684621B1C7DAFCD0028B2CF /* Scribble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scribble.m; sourceTree = "<group>"; };
+		E684621D1C7DAFE40028B2CF /* CanvasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewController.h; sourceTree = "<group>"; };
+		E684621E1C7DAFE40028B2CF /* CanvasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewController.m; sourceTree = "<group>"; };
+		E684621F1C7DAFE40028B2CF /* CanvasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasViewController.xib; sourceTree = "<group>"; };
+		E68462221C7DB0080028B2CF /* PaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteViewController.h; sourceTree = "<group>"; };
+		E68462231C7DB0080028B2CF /* PaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteViewController.m; sourceTree = "<group>"; };
+		E68462241C7DB0080028B2CF /* PaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaletteViewController.xib; sourceTree = "<group>"; };
+		E68462281C7DB1560028B2CF /* CoordinatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatingViewController.h; sourceTree = "<group>"; };
+		E68462291C7DB1560028B2CF /* CoordinatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +116,11 @@
 			children = (
 				E68461EA1C7DAEFF0028B2CF /* AppDelegate.h */,
 				E68461EB1C7DAEFF0028B2CF /* AppDelegate.m */,
-				E68461ED1C7DAEFF0028B2CF /* ViewController.h */,
-				E68461EE1C7DAEFF0028B2CF /* ViewController.m */,
+				E68462281C7DB1560028B2CF /* CoordinatingViewController.h */,
+				E68462291C7DB1560028B2CF /* CoordinatingViewController.m */,
+				E684621A1C7DAFCD0028B2CF /* Scribble.h */,
+				E684621B1C7DAFCD0028B2CF /* Scribble.m */,
+				E68462271C7DB00E0028B2CF /* View Controller */,
 				E68461F01C7DAEFF0028B2CF /* Main.storyboard */,
 				E68461F31C7DAEFF0028B2CF /* Assets.xcassets */,
 				E68461F51C7DAEFF0028B2CF /* LaunchScreen.storyboard */,
@@ -138,6 +154,19 @@
 				E684620E1C7DAEFF0028B2CF /* Info.plist */,
 			);
 			path = TouchPainterOCUITests;
+			sourceTree = "<group>";
+		};
+		E68462271C7DB00E0028B2CF /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E684621D1C7DAFE40028B2CF /* CanvasViewController.h */,
+				E684621E1C7DAFE40028B2CF /* CanvasViewController.m */,
+				E684621F1C7DAFE40028B2CF /* CanvasViewController.xib */,
+				E68462221C7DB0080028B2CF /* PaletteViewController.h */,
+				E68462231C7DB0080028B2CF /* PaletteViewController.m */,
+				E68462241C7DB0080028B2CF /* PaletteViewController.xib */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68462211C7DAFE40028B2CF /* CanvasViewController.xib in Resources */,
 				E68461F71C7DAEFF0028B2CF /* LaunchScreen.storyboard in Resources */,
 				E68461F41C7DAEFF0028B2CF /* Assets.xcassets in Resources */,
+				E68462261C7DB0080028B2CF /* PaletteViewController.xib in Resources */,
 				E68461F21C7DAEFF0028B2CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,9 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68461EF1C7DAEFF0028B2CF /* ViewController.m in Sources */,
+				E68462251C7DB0080028B2CF /* PaletteViewController.m in Sources */,
 				E68461EC1C7DAEFF0028B2CF /* AppDelegate.m in Sources */,
+				E68462201C7DAFE40028B2CF /* CanvasViewController.m in Sources */,
+				E684622A1C7DB1560028B2CF /* CoordinatingViewController.m in Sources */,
 				E68461E91C7DAEFF0028B2CF /* main.m in Sources */,
+				E684621C1C7DAFCD0028B2CF /* Scribble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PaletteViewController.h
 //  TouchPainterOC
 //
 //  Created by Pan Meng on 2/24/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PaletteViewController : UIViewController
 
 @end
-
