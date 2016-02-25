@@ -26,6 +26,10 @@
 		E6FEA4321C7ED75F007F4F03 /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4311C7ED75F007F4F03 /* Command.m */; };
 		E6FEA4351C7ED89A007F4F03 /* SetStrokeColorCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4341C7ED89A007F4F03 /* SetStrokeColorCommand.m */; };
 		E6FEA4391C7EE7AD007F4F03 /* SetStrokeSizeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */; };
+		E6FEA43E1C7EF0F8007F4F03 /* Dot.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA43D1C7EF0F8007F4F03 /* Dot.m */; };
+		E6FEA4411C7EF103007F4F03 /* Vertex.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4401C7EF103007F4F03 /* Vertex.m */; };
+		E6FEA4441C7EF11E007F4F03 /* Stroke.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4431C7EF11E007F4F03 /* Stroke.m */; };
+		E6FEA4491C7F01FD007F4F03 /* MarkRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4481C7F01FD007F4F03 /* MarkRenderer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,16 @@
 		E6FEA4341C7ED89A007F4F03 /* SetStrokeColorCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeColorCommand.m; sourceTree = "<group>"; };
 		E6FEA4371C7EE7AD007F4F03 /* SetStrokeSizeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStrokeSizeCommand.h; sourceTree = "<group>"; };
 		E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeSizeCommand.m; sourceTree = "<group>"; };
+		E6FEA43A1C7EF0C0007F4F03 /* Mark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mark.h; sourceTree = "<group>"; };
+		E6FEA43C1C7EF0F8007F4F03 /* Dot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dot.h; sourceTree = "<group>"; };
+		E6FEA43D1C7EF0F8007F4F03 /* Dot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dot.m; sourceTree = "<group>"; };
+		E6FEA43F1C7EF102007F4F03 /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		E6FEA4401C7EF103007F4F03 /* Vertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vertex.m; sourceTree = "<group>"; };
+		E6FEA4421C7EF11E007F4F03 /* Stroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stroke.h; sourceTree = "<group>"; };
+		E6FEA4431C7EF11E007F4F03 /* Stroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stroke.m; sourceTree = "<group>"; };
+		E6FEA4451C7F0148007F4F03 /* MarkVisitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkVisitor.h; sourceTree = "<group>"; };
+		E6FEA4471C7F01FD007F4F03 /* MarkRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkRenderer.h; sourceTree = "<group>"; };
+		E6FEA4481C7F01FD007F4F03 /* MarkRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkRenderer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +158,8 @@
 				E6FEA4281C7EC803007F4F03 /* CanvasView.m */,
 				E6FEA42D1C7ED4C9007F4F03 /* CommandSlider.h */,
 				E6FEA42E1C7ED4C9007F4F03 /* CommandSlider.m */,
+				E6FEA4461C7F014D007F4F03 /* Visitor */,
+				E6FEA43B1C7EF0C8007F4F03 /* Prototype */,
 				E6FEA4361C7ED89E007F4F03 /* Command */,
 				E68462271C7DB00E0028B2CF /* View Controller */,
 				E68461F01C7DAEFF0028B2CF /* Main.storyboard */,
@@ -205,6 +221,30 @@
 				E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */,
 			);
 			name = Command;
+			sourceTree = "<group>";
+		};
+		E6FEA43B1C7EF0C8007F4F03 /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				E6FEA43A1C7EF0C0007F4F03 /* Mark.h */,
+				E6FEA43C1C7EF0F8007F4F03 /* Dot.h */,
+				E6FEA43D1C7EF0F8007F4F03 /* Dot.m */,
+				E6FEA43F1C7EF102007F4F03 /* Vertex.h */,
+				E6FEA4401C7EF103007F4F03 /* Vertex.m */,
+				E6FEA4421C7EF11E007F4F03 /* Stroke.h */,
+				E6FEA4431C7EF11E007F4F03 /* Stroke.m */,
+			);
+			name = Prototype;
+			sourceTree = "<group>";
+		};
+		E6FEA4461C7F014D007F4F03 /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				E6FEA4451C7F0148007F4F03 /* MarkVisitor.h */,
+				E6FEA4471C7F01FD007F4F03 /* MarkRenderer.h */,
+				E6FEA4481C7F01FD007F4F03 /* MarkRenderer.m */,
+			);
+			name = Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E68462251C7DB0080028B2CF /* PaletteViewController.m in Sources */,
+				E6FEA4411C7EF103007F4F03 /* Vertex.m in Sources */,
+				E6FEA43E1C7EF0F8007F4F03 /* Dot.m in Sources */,
 				E68461EC1C7DAEFF0028B2CF /* AppDelegate.m in Sources */,
 				E68462201C7DAFE40028B2CF /* CanvasViewController.m in Sources */,
 				E6FEA4391C7EE7AD007F4F03 /* SetStrokeSizeCommand.m in Sources */,
@@ -351,6 +393,8 @@
 				E6FEA42F1C7ED4C9007F4F03 /* CommandSlider.m in Sources */,
 				E684621C1C7DAFCD0028B2CF /* Scribble.m in Sources */,
 				E6FEA4291C7EC803007F4F03 /* CanvasView.m in Sources */,
+				E6FEA4491C7F01FD007F4F03 /* MarkRenderer.m in Sources */,
+				E6FEA4441C7EF11E007F4F03 /* Stroke.m in Sources */,
 				E6FEA4261C7EC7D5007F4F03 /* CanvasViewGenerator.m in Sources */,
 				E6FEA4351C7ED89A007F4F03 /* SetStrokeColorCommand.m in Sources */,
 				E6FEA4321C7ED75F007F4F03 /* Command.m in Sources */,
