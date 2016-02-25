@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommandSlider.h"
+
 
 @interface PaletteViewController : UIViewController
+
+- (IBAction)onCommandSliderValueChanged:(CommandSlider *)sender;
 
 @end

@@ -20,6 +20,12 @@
 		E68462251C7DB0080028B2CF /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68462231C7DB0080028B2CF /* PaletteViewController.m */; };
 		E68462261C7DB0080028B2CF /* PaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68462241C7DB0080028B2CF /* PaletteViewController.xib */; };
 		E684622A1C7DB1560028B2CF /* CoordinatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E68462291C7DB1560028B2CF /* CoordinatingViewController.m */; };
+		E6FEA4261C7EC7D5007F4F03 /* CanvasViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4251C7EC7D5007F4F03 /* CanvasViewGenerator.m */; };
+		E6FEA4291C7EC803007F4F03 /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4281C7EC803007F4F03 /* CanvasView.m */; };
+		E6FEA42F1C7ED4C9007F4F03 /* CommandSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA42E1C7ED4C9007F4F03 /* CommandSlider.m */; };
+		E6FEA4321C7ED75F007F4F03 /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4311C7ED75F007F4F03 /* Command.m */; };
+		E6FEA4351C7ED89A007F4F03 /* SetStrokeColorCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4341C7ED89A007F4F03 /* SetStrokeColorCommand.m */; };
+		E6FEA4391C7EE7AD007F4F03 /* SetStrokeSizeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,18 @@
 		E68462241C7DB0080028B2CF /* PaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaletteViewController.xib; sourceTree = "<group>"; };
 		E68462281C7DB1560028B2CF /* CoordinatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoordinatingViewController.h; sourceTree = "<group>"; };
 		E68462291C7DB1560028B2CF /* CoordinatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoordinatingViewController.m; sourceTree = "<group>"; };
+		E6FEA4241C7EC7D5007F4F03 /* CanvasViewGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasViewGenerator.h; sourceTree = "<group>"; };
+		E6FEA4251C7EC7D5007F4F03 /* CanvasViewGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasViewGenerator.m; sourceTree = "<group>"; };
+		E6FEA4271C7EC803007F4F03 /* CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		E6FEA4281C7EC803007F4F03 /* CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		E6FEA42D1C7ED4C9007F4F03 /* CommandSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSlider.h; sourceTree = "<group>"; };
+		E6FEA42E1C7ED4C9007F4F03 /* CommandSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSlider.m; sourceTree = "<group>"; };
+		E6FEA4301C7ED75F007F4F03 /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		E6FEA4311C7ED75F007F4F03 /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Command.m; sourceTree = "<group>"; };
+		E6FEA4331C7ED89A007F4F03 /* SetStrokeColorCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStrokeColorCommand.h; sourceTree = "<group>"; };
+		E6FEA4341C7ED89A007F4F03 /* SetStrokeColorCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeColorCommand.m; sourceTree = "<group>"; };
+		E6FEA4371C7EE7AD007F4F03 /* SetStrokeSizeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStrokeSizeCommand.h; sourceTree = "<group>"; };
+		E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStrokeSizeCommand.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +138,13 @@
 				E68462291C7DB1560028B2CF /* CoordinatingViewController.m */,
 				E684621A1C7DAFCD0028B2CF /* Scribble.h */,
 				E684621B1C7DAFCD0028B2CF /* Scribble.m */,
+				E6FEA4241C7EC7D5007F4F03 /* CanvasViewGenerator.h */,
+				E6FEA4251C7EC7D5007F4F03 /* CanvasViewGenerator.m */,
+				E6FEA4271C7EC803007F4F03 /* CanvasView.h */,
+				E6FEA4281C7EC803007F4F03 /* CanvasView.m */,
+				E6FEA42D1C7ED4C9007F4F03 /* CommandSlider.h */,
+				E6FEA42E1C7ED4C9007F4F03 /* CommandSlider.m */,
+				E6FEA4361C7ED89E007F4F03 /* Command */,
 				E68462271C7DB00E0028B2CF /* View Controller */,
 				E68461F01C7DAEFF0028B2CF /* Main.storyboard */,
 				E68461F31C7DAEFF0028B2CF /* Assets.xcassets */,
@@ -167,6 +192,19 @@
 				E68462241C7DB0080028B2CF /* PaletteViewController.xib */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		E6FEA4361C7ED89E007F4F03 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				E6FEA4301C7ED75F007F4F03 /* Command.h */,
+				E6FEA4311C7ED75F007F4F03 /* Command.m */,
+				E6FEA4331C7ED89A007F4F03 /* SetStrokeColorCommand.h */,
+				E6FEA4341C7ED89A007F4F03 /* SetStrokeColorCommand.m */,
+				E6FEA4371C7EE7AD007F4F03 /* SetStrokeSizeCommand.h */,
+				E6FEA4381C7EE7AD007F4F03 /* SetStrokeSizeCommand.m */,
+			);
+			name = Command;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,9 +345,15 @@
 				E68462251C7DB0080028B2CF /* PaletteViewController.m in Sources */,
 				E68461EC1C7DAEFF0028B2CF /* AppDelegate.m in Sources */,
 				E68462201C7DAFE40028B2CF /* CanvasViewController.m in Sources */,
+				E6FEA4391C7EE7AD007F4F03 /* SetStrokeSizeCommand.m in Sources */,
 				E684622A1C7DB1560028B2CF /* CoordinatingViewController.m in Sources */,
 				E68461E91C7DAEFF0028B2CF /* main.m in Sources */,
+				E6FEA42F1C7ED4C9007F4F03 /* CommandSlider.m in Sources */,
 				E684621C1C7DAFCD0028B2CF /* Scribble.m in Sources */,
+				E6FEA4291C7EC803007F4F03 /* CanvasView.m in Sources */,
+				E6FEA4261C7EC7D5007F4F03 /* CanvasViewGenerator.m in Sources */,
+				E6FEA4351C7ED89A007F4F03 /* SetStrokeColorCommand.m in Sources */,
+				E6FEA4321C7ED75F007F4F03 /* Command.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +577,7 @@
 				E68462131C7DAEFF0028B2CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68462141C7DAEFF0028B2CF /* Build configuration list for PBXNativeTarget "TouchPainterOCTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +586,7 @@
 				E68462161C7DAEFF0028B2CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68462171C7DAEFF0028B2CF /* Build configuration list for PBXNativeTarget "TouchPainterOCUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +595,7 @@
 				E68462191C7DAEFF0028B2CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

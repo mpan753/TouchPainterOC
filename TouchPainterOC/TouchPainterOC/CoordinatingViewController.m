@@ -46,13 +46,20 @@ static CoordinatingViewController* sharedInstance = nil;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)requestViewChangeByObject:(id)object
+
+
+- (IBAction)requestViewChangeByObject:(id)object
 {
     if ([object isKindOfClass:[UIBarButtonItem class]]) {
+        
+        UIViewController *windowRoot = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+        
         switch (((UIBarButtonItem *)object).tag) {
             case kButtonTagOpenPaletteView:
             {
-                [self presentViewController:[[PaletteViewController alloc] init] animated:YES completion:nil];
+                PaletteViewController *paletteVC = [[PaletteViewController alloc] init];
+                [windowRoot presentViewController:paletteVC animated:YES completion:nil];
+                self.activeViewController = paletteVC;
             }
                 break;
             case kButtonTagOpenThumbnailView:
@@ -60,6 +67,10 @@ static CoordinatingViewController* sharedInstance = nil;
                 
             }
             default:
+            {
+                [windowRoot dismissViewControllerAnimated:YES completion:nil];
+                self.activeViewController = self.canvasViewController;
+            }
                 break;
         }
     }
