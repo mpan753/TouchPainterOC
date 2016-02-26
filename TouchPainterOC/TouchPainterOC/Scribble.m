@@ -25,7 +25,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _parentMark = [[Stroke alloc] init];
-        self.mark = _parentMark;
     }
     return self;
 }
