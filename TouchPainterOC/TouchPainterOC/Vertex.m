@@ -15,7 +15,7 @@
 @implementation Vertex
 
 @synthesize location;
-@dynamic color, size;
+@dynamic color, size, lastChild;
 
 - (id)initWithLocation:(CGPoint)loc {
     if (self = [super init]) {

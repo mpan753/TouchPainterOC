@@ -11,6 +11,7 @@
 #import "Dot.h"
 #import "Stroke.h"
 #import "Vertex.h"
+#import "CommandBarButton.h"
 
 @interface CanvasViewController ()
 
@@ -101,6 +102,12 @@
         }
     }
 }
+
+#pragma - 
+- (IBAction) onCustomBarButtonHit:(CommandBarButton *)barButton {
+    [[barButton commandM] execute];
+}
+
 
 /*
 #pragma mark - Navigation

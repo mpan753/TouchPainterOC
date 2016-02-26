@@ -20,9 +20,19 @@
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="4NN-Sc-KxE"/>
-                        <barButtonItem style="plain" systemItem="trash" id="GXr-gB-2p7"/>
+                        <barButtonItem style="plain" systemItem="trash" id="GXr-gB-2p7" customClass="CommandBarButton">
+                            <connections>
+                                <action selector="onCustomBarButtonHit:" destination="-1" id="4Wo-iV-57B"/>
+                                <outlet property="commandM" destination="iMJ-KJ-gCP" id="BuJ-JH-WVj"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="nHJ-Jd-8eb"/>
-                        <barButtonItem image="save" style="plain" id="L8w-38-XSf"/>
+                        <barButtonItem image="save" style="plain" id="L8w-38-XSf" customClass="CommandBarButton">
+                            <connections>
+                                <action selector="onCustomBarButtonHit:" destination="-1" id="G4H-11-f8Z"/>
+                                <outlet property="commandM" destination="9oq-bX-bwq" id="hBJ-x4-dAi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="xJR-zP-3b7"/>
                         <barButtonItem tag="2" image="open" style="plain" id="ieA-RK-Pzp">
                             <connections>
@@ -52,6 +62,8 @@
             <point key="canvasLocation" x="564.5" y="423.5"/>
         </view>
         <customObject id="EJg-av-dgA" customClass="CoordinatingViewController"/>
+        <customObject id="9oq-bX-bwq" customClass="SaveScribbleCommand"/>
+        <customObject id="iMJ-KJ-gCP" customClass="DeleteScribbleCommand"/>
     </objects>
     <resources>
         <image name="open" width="24" height="24"/>
