@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MarkVisitor.h"
 
 
 @protocol Mark <NSObject>
@@ -15,8 +16,11 @@
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, assign) CGFloat size;
 @property (nonatomic, assign) CGPoint location;
+@property (nonatomic, readonly) id <Mark>lastChild;
 
 - (void)addMark:(id <Mark>)mark;
 - (void)removeMark:(id <Mark>)mark;
+
+- (void) acceptMarkVisitor:(id <MarkVisitor>) visitor;
 
 @end

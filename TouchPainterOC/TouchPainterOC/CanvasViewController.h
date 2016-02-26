@@ -13,7 +13,7 @@
 
 @interface CanvasViewController : UIViewController
 
-@property (nonatomic, retain) UIColor *strokeColor;
+@property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, assign) CGFloat strokeSize;
 
 - (void)loadCanvasViewWithGenerator:(CanvasViewGenerator *)generator;

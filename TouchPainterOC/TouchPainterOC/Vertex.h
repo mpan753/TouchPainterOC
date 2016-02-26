@@ -11,4 +11,6 @@
 
 @interface Vertex : NSObject <Mark>
 
+- (id)initWithLocation:(CGPoint)location;
+
 @end

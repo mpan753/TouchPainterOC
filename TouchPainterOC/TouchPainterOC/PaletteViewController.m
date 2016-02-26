@@ -9,8 +9,9 @@
 #import "PaletteViewController.h"
 #import "CoordinatingViewController.h"
 #import "SetStrokeColorCommand.h"
+#import "SetStrokeSizeCommand.h"
 
-@interface PaletteViewController () <SetStrokeColorCommandDelegate>
+@interface PaletteViewController () <SetStrokeColorCommandDelegate, SetStrokeSizeCommandDelegate>
 {
     IBOutlet CommandSlider *_redSlider;
     IBOutlet CommandSlider *_greenSlider;
@@ -52,6 +53,10 @@
 
 - (void)command:(SetStrokeColorCommand *)command didFinishColorUpdateWithColor:(UIColor *)color {
     _paletteView.backgroundColor = color;
+}
+
+- (void)command:(SetStrokeSizeCommand *)command didRequestForStrokeSize:(CGFloat *)size {
+    *size = _sizeSlider.value;
 }
 
 /*

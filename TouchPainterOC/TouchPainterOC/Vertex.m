@@ -17,11 +17,22 @@
 @synthesize location;
 @dynamic color, size;
 
+- (id)initWithLocation:(CGPoint)loc {
+    if (self = [super init]) {
+        [self setLocation:loc];
+    }
+    return self;
+}
+
 - (void)addMark:(id<Mark>)mark {
 }
 
 - (void)removeMark:(id<Mark>)mark {
     
+}
+
+- (void)acceptMarkVisitor:(id<MarkVisitor>)visitor {
+    [visitor visitVertex:self];
 }
 
 @end

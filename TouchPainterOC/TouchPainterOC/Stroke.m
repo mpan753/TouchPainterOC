@@ -21,4 +21,15 @@
     [self.children removeObject:mark];
 }
 
+- (id<Mark>)lastChild {
+    return [self.children lastObject];
+}
+
+- (void)acceptMarkVisitor:(id<MarkVisitor>)visitor {
+    for (id <Mark>child in self.children) {
+        [child acceptMarkVisitor:visitor];
+    }
+    [visitor visitStroke:self];
+}
+
 @end

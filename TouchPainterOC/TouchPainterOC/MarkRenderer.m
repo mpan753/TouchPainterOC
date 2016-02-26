@@ -11,6 +11,7 @@
 @interface MarkRenderer ()
 {
     CGContextRef _context;
+    BOOL _shouldMoveContextToDot;
 }
 @end
 
@@ -19,6 +20,7 @@
 - (id)initWithCGContext:(CGContextRef)context {
     if (self = [super init]) {
         _context = context;
+        _shouldMoveContextToDot = YES;
     }
     return self;
 }
@@ -37,16 +39,20 @@
 }
 
 - (void)visitVertex:(Vertex *)vertex {
-    CGContextAddLineToPoint(_context, vertex.location.x, vertex.location.y);
+    if (_shouldMoveContextToDot) {
+        CGContextMoveToPoint(_context, vertex.location.x, vertex.location.y);
+        _shouldMoveContextToDot = NO;
+    } else {
+        CGContextAddLineToPoint(_context, vertex.location.x, vertex.location.y);
+    }
 }
 
 - (void)visitStroke:(Stroke *)stroke {
-    CGContextMoveToPoint(_context, stroke.location.x, stroke.location.y);
-    for (id <Mark> mark in stroke.children) {
-        [self visitMark:mark];
-    }
     CGContextSetFillColorWithColor(_context, stroke.color.CGColor);
+    CGContextSetLineWidth(_context, stroke.size);
+    CGContextSetLineCap(_context, kCGLineCapRound);
     CGContextStrokePath(_context);
+    _shouldMoveContextToDot = YES;
 }
 
 @end

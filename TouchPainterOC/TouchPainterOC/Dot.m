@@ -19,4 +19,8 @@
     
 }
 
+- (void)acceptMarkVisitor:(id<MarkVisitor>)visitor {
+    [visitor visitDot:self];
+}
+
 @end

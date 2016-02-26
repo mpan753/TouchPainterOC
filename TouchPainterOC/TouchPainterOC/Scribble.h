@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Mark.h"
 
 @interface Scribble : NSObject
+
+- (void)addMark:(id <Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark;
 
 @end
