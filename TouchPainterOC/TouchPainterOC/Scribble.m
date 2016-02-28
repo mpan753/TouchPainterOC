@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) id <Mark> mark;
 
+- (ScribbleMemento *) scribbleMementoWithCompleteSnapshot:(BOOL)hasCompleteSnapshot;
+
 @end
 
 @implementation Scribble
@@ -21,6 +23,8 @@
     id <Mark> _parentMark;
     id <Mark> _incrementalMark;
 }
+
+@synthesize mark = _parentMark;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -31,12 +35,28 @@
 
 - (void)addMark:(id<Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark {
     [self willChangeValueForKey:@"mark"];
-    if (!shouldAddToPreviousMark) {
-        [_parentMark addMark:aMark];
-    } else {
+    if (shouldAddToPreviousMark) {
         [[_parentMark lastChild] addMark:aMark];
+    } else {
+        [_parentMark addMark:aMark];
     }
     [self didChangeValueForKey:@"mark"];
+}
+
+- (ScribbleMemento *)scribbleMemento {
+    return [self scribbleMementoWithCompleteSnapshot:YES];
+}
+
+- (ScribbleMemento *)scribbleMementoWithCompleteSnapshot:(BOOL)hasCompleteSnapshot {
+    id <Mark> mementoMark;
+    
+    if (hasCompleteSnapshot) {
+        mementoMark = _parentMark;
+    }
+    
+    ScribbleMemento *scribbleMemento = [[ScribbleMemento alloc] initWithMark:mementoMark];
+    
+    return scribbleMemento;
 }
 
 @end

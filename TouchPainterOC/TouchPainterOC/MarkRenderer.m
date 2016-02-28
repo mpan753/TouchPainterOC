@@ -48,7 +48,7 @@
 }
 
 - (void)visitStroke:(Stroke *)stroke {
-    CGContextSetFillColorWithColor(_context, stroke.color.CGColor);
+    CGContextSetStrokeColorWithColor(_context, stroke.color.CGColor);
     CGContextSetLineWidth(_context, stroke.size);
     CGContextSetLineCap(_context, kCGLineCapRound);
     CGContextStrokePath(_context);

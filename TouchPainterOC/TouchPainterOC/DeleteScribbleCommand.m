@@ -7,11 +7,14 @@
 //
 
 #import "DeleteScribbleCommand.h"
+#import "CoordinatingViewController.h"
+#import "Scribble.h"
 
 @implementation DeleteScribbleCommand
 
 - (void)execute {
-    
+    Scribble *scribble = [[Scribble alloc] init];
+    [[[CoordinatingViewController sharedCoordinator] canvasViewController] setScribble:scribble];
 }
 
 @end

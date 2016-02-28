@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Mark.h"
+#import "ScribbleMemento.h"
 
 @interface Scribble : NSObject
 
 - (void)addMark:(id <Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark;
+
+- (ScribbleMemento *) scribbleMemento;
 
 @end

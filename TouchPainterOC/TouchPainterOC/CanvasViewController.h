@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, assign) CGFloat strokeSize;
+@property (nonatomic, strong) Scribble *scribble;
+@property (nonatomic, strong) CanvasView *canvasView;
 
 - (void)loadCanvasViewWithGenerator:(CanvasViewGenerator *)generator;
 

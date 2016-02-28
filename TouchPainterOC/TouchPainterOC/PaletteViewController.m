@@ -32,6 +32,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 //    SetStrokeColorCommand *
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _redSlider.value = [userDefaults floatForKey:@"red"];
+    _greenSlider.value = [userDefaults floatForKey:@"green"];
+    _blueSlider.value = [userDefaults floatForKey:@"blue"];
+    _sizeSlider.value = [userDefaults floatForKey:@"size"];
+    _paletteView.backgroundColor = [UIColor colorWithRed:_redSlider.value green:_greenSlider.value blue:_blueSlider.value alpha:1];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setFloat:_redSlider.value forKey:@"red"];
+    [userDefaults setFloat:_greenSlider.value forKey:@"green"];
+    [userDefaults setFloat:_blueSlider.value forKey:@"blue"];
+    [userDefaults setFloat:_sizeSlider.value forKey:@"size"];
 }
 
 - (void)didReceiveMemoryWarning {

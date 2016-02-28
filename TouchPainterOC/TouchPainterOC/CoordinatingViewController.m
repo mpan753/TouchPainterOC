@@ -8,6 +8,7 @@
 
 #import "CoordinatingViewController.h"
 #import "PaletteViewController.h"
+#import "ThumbnailViewController.h"
 #import "CanvasViewController.h"
 
 @interface CoordinatingViewController ()
@@ -64,8 +65,11 @@ static CoordinatingViewController* sharedInstance = nil;
                 break;
             case kButtonTagOpenThumbnailView:
             {
-                
+                ThumbnailViewController *thumbnailVC = [[ThumbnailViewController alloc] init];
+                [windowRoot presentViewController:thumbnailVC animated:YES completion:nil];
+                self.activeViewController = thumbnailVC;
             }
+                break;
             default:
             {
                 [windowRoot dismissViewControllerAnimated:YES completion:nil];

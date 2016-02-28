@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1A05EC1C818EF6008E5F1C /* ScribbleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A05EB1C818EF6008E5F1C /* ScribbleManager.m */; };
+		0D1A05EF1C818F1B008E5F1C /* ScribbleMemento.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A05EE1C818F1B008E5F1C /* ScribbleMemento.m */; };
+		0D1A05F41C82917C008E5F1C /* UIView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A05F31C82917C008E5F1C /* UIView+UIImage.m */; };
+		0D1A06011C82E90D008E5F1C /* ThumbnailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A05FF1C82E90D008E5F1C /* ThumbnailViewController.m */; };
+		0D1A06021C82E90D008E5F1C /* ThumbnailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A06001C82E90D008E5F1C /* ThumbnailViewController.xib */; };
+		0D1A06091C82EC55008E5F1C /* ScribbleThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A06081C82EC55008E5F1C /* ScribbleThumbnailCell.m */; };
 		E64727011C804A810022FB3D /* CommandBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E64727001C804A810022FB3D /* CommandBarButton.m */; };
 		E64727051C804B070022FB3D /* SaveScribbleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E64727041C804B070022FB3D /* SaveScribbleCommand.m */; };
 		E64727081C804B140022FB3D /* DeleteScribbleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = E64727071C804B140022FB3D /* DeleteScribbleCommand.m */; };
@@ -53,6 +59,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1A05EA1C818EF6008E5F1C /* ScribbleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleManager.h; sourceTree = "<group>"; };
+		0D1A05EB1C818EF6008E5F1C /* ScribbleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleManager.m; sourceTree = "<group>"; };
+		0D1A05ED1C818F1B008E5F1C /* ScribbleMemento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleMemento.h; sourceTree = "<group>"; };
+		0D1A05EE1C818F1B008E5F1C /* ScribbleMemento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleMemento.m; sourceTree = "<group>"; };
+		0D1A05F21C82917C008E5F1C /* UIView+UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIImage.h"; sourceTree = "<group>"; };
+		0D1A05F31C82917C008E5F1C /* UIView+UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIImage.m"; sourceTree = "<group>"; };
+		0D1A05FE1C82E90D008E5F1C /* ThumbnailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailViewController.h; sourceTree = "<group>"; };
+		0D1A05FF1C82E90D008E5F1C /* ThumbnailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailViewController.m; sourceTree = "<group>"; };
+		0D1A06001C82E90D008E5F1C /* ThumbnailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThumbnailViewController.xib; sourceTree = "<group>"; };
+		0D1A06071C82EC55008E5F1C /* ScribbleThumbnailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScribbleThumbnailCell.h; sourceTree = "<group>"; };
+		0D1A06081C82EC55008E5F1C /* ScribbleThumbnailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScribbleThumbnailCell.m; sourceTree = "<group>"; };
 		E64726FF1C804A810022FB3D /* CommandBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandBarButton.h; sourceTree = "<group>"; };
 		E64727001C804A810022FB3D /* CommandBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandBarButton.m; sourceTree = "<group>"; };
 		E64727031C804B070022FB3D /* SaveScribbleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveScribbleCommand.h; sourceTree = "<group>"; };
@@ -132,13 +149,92 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E64727021C804A8E0022FB3D /* Utilities */ = {
+		0D1A05F01C818F22008E5F1C /* Memento */ = {
+			isa = PBXGroup;
+			children = (
+				E684621A1C7DAFCD0028B2CF /* Scribble.h */,
+				E684621B1C7DAFCD0028B2CF /* Scribble.m */,
+				0D1A05EA1C818EF6008E5F1C /* ScribbleManager.h */,
+				0D1A05EB1C818EF6008E5F1C /* ScribbleManager.m */,
+				0D1A05ED1C818F1B008E5F1C /* ScribbleMemento.h */,
+				0D1A05EE1C818F1B008E5F1C /* ScribbleMemento.m */,
+			);
+			name = Memento;
+			sourceTree = "<group>";
+		};
+		0D1A05F11C829129008E5F1C /* View2Image */ = {
+			isa = PBXGroup;
+			children = (
+				0D1A05F21C82917C008E5F1C /* UIView+UIImage.h */,
+				0D1A05F31C82917C008E5F1C /* UIView+UIImage.m */,
+			);
+			name = View2Image;
+			sourceTree = "<group>";
+		};
+		0D1A05F81C8291E7008E5F1C /* Command Button */ = {
+			isa = PBXGroup;
+			children = (
+				E64726FF1C804A810022FB3D /* CommandBarButton.h */,
+				E64727001C804A810022FB3D /* CommandBarButton.m */,
+			);
+			name = "Command Button";
+			sourceTree = "<group>";
+		};
+		0D1A05F91C8291FE008E5F1C /* Command Slider */ = {
 			isa = PBXGroup;
 			children = (
 				E6FEA42D1C7ED4C9007F4F03 /* CommandSlider.h */,
 				E6FEA42E1C7ED4C9007F4F03 /* CommandSlider.m */,
-				E64726FF1C804A810022FB3D /* CommandBarButton.h */,
-				E64727001C804A810022FB3D /* CommandBarButton.m */,
+			);
+			name = "Command Slider";
+			sourceTree = "<group>";
+		};
+		0D1A06031C82EBFC008E5F1C /* Thumbnail View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0D1A06061C82EC28008E5F1C /* Scribble Thumbnail Cell */,
+				0D1A05FE1C82E90D008E5F1C /* ThumbnailViewController.h */,
+				0D1A05FF1C82E90D008E5F1C /* ThumbnailViewController.m */,
+				0D1A06001C82E90D008E5F1C /* ThumbnailViewController.xib */,
+			);
+			name = "Thumbnail View Controller";
+			sourceTree = "<group>";
+		};
+		0D1A06041C82EC0F008E5F1C /* Palette View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E68462221C7DB0080028B2CF /* PaletteViewController.h */,
+				E68462231C7DB0080028B2CF /* PaletteViewController.m */,
+				E68462241C7DB0080028B2CF /* PaletteViewController.xib */,
+			);
+			name = "Palette View Controller";
+			sourceTree = "<group>";
+		};
+		0D1A06051C82EC1C008E5F1C /* Canvas View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E684621D1C7DAFE40028B2CF /* CanvasViewController.h */,
+				E684621E1C7DAFE40028B2CF /* CanvasViewController.m */,
+				E684621F1C7DAFE40028B2CF /* CanvasViewController.xib */,
+			);
+			name = "Canvas View Controller";
+			sourceTree = "<group>";
+		};
+		0D1A06061C82EC28008E5F1C /* Scribble Thumbnail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0D1A06071C82EC55008E5F1C /* ScribbleThumbnailCell.h */,
+				0D1A06081C82EC55008E5F1C /* ScribbleThumbnailCell.m */,
+			);
+			name = "Scribble Thumbnail Cell";
+			sourceTree = "<group>";
+		};
+		E64727021C804A8E0022FB3D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0D1A05F91C8291FE008E5F1C /* Command Slider */,
+				0D1A05F81C8291E7008E5F1C /* Command Button */,
+				0D1A05F11C829129008E5F1C /* View2Image */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -170,8 +266,7 @@
 				E68461EB1C7DAEFF0028B2CF /* AppDelegate.m */,
 				E68462281C7DB1560028B2CF /* CoordinatingViewController.h */,
 				E68462291C7DB1560028B2CF /* CoordinatingViewController.m */,
-				E684621A1C7DAFCD0028B2CF /* Scribble.h */,
-				E684621B1C7DAFCD0028B2CF /* Scribble.m */,
+				0D1A05F01C818F22008E5F1C /* Memento */,
 				E6FEA4241C7EC7D5007F4F03 /* CanvasViewGenerator.h */,
 				E6FEA4251C7EC7D5007F4F03 /* CanvasViewGenerator.m */,
 				E6FEA4271C7EC803007F4F03 /* CanvasView.h */,
@@ -219,12 +314,9 @@
 		E68462271C7DB00E0028B2CF /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E684621D1C7DAFE40028B2CF /* CanvasViewController.h */,
-				E684621E1C7DAFE40028B2CF /* CanvasViewController.m */,
-				E684621F1C7DAFE40028B2CF /* CanvasViewController.xib */,
-				E68462221C7DB0080028B2CF /* PaletteViewController.h */,
-				E68462231C7DB0080028B2CF /* PaletteViewController.m */,
-				E68462241C7DB0080028B2CF /* PaletteViewController.xib */,
+				0D1A06051C82EC1C008E5F1C /* Canvas View Controller */,
+				0D1A06041C82EC0F008E5F1C /* Palette View Controller */,
+				0D1A06031C82EBFC008E5F1C /* Thumbnail View Controller */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -381,6 +473,7 @@
 				E68461F41C7DAEFF0028B2CF /* Assets.xcassets in Resources */,
 				E68462261C7DB0080028B2CF /* PaletteViewController.xib in Resources */,
 				E68461F21C7DAEFF0028B2CF /* Main.storyboard in Resources */,
+				0D1A06021C82E90D008E5F1C /* ThumbnailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,21 +502,26 @@
 				E6FEA4411C7EF103007F4F03 /* Vertex.m in Sources */,
 				E6FEA43E1C7EF0F8007F4F03 /* Dot.m in Sources */,
 				E68461EC1C7DAEFF0028B2CF /* AppDelegate.m in Sources */,
+				0D1A06091C82EC55008E5F1C /* ScribbleThumbnailCell.m in Sources */,
+				0D1A05F41C82917C008E5F1C /* UIView+UIImage.m in Sources */,
 				E68462201C7DAFE40028B2CF /* CanvasViewController.m in Sources */,
 				E64727011C804A810022FB3D /* CommandBarButton.m in Sources */,
 				E6FEA4391C7EE7AD007F4F03 /* SetStrokeSizeCommand.m in Sources */,
+				0D1A06011C82E90D008E5F1C /* ThumbnailViewController.m in Sources */,
 				E684622A1C7DB1560028B2CF /* CoordinatingViewController.m in Sources */,
 				E68461E91C7DAEFF0028B2CF /* main.m in Sources */,
 				E6FEA42F1C7ED4C9007F4F03 /* CommandSlider.m in Sources */,
 				E64727081C804B140022FB3D /* DeleteScribbleCommand.m in Sources */,
 				E684621C1C7DAFCD0028B2CF /* Scribble.m in Sources */,
 				E6FEA4291C7EC803007F4F03 /* CanvasView.m in Sources */,
+				0D1A05EC1C818EF6008E5F1C /* ScribbleManager.m in Sources */,
 				E6FEA4491C7F01FD007F4F03 /* MarkRenderer.m in Sources */,
 				E6FEA4441C7EF11E007F4F03 /* Stroke.m in Sources */,
 				E64727051C804B070022FB3D /* SaveScribbleCommand.m in Sources */,
 				E6FEA4261C7EC7D5007F4F03 /* CanvasViewGenerator.m in Sources */,
 				E6FEA4351C7ED89A007F4F03 /* SetStrokeColorCommand.m in Sources */,
 				E6FEA4321C7ED75F007F4F03 /* Command.m in Sources */,
+				0D1A05EF1C818F1B008E5F1C /* ScribbleMemento.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

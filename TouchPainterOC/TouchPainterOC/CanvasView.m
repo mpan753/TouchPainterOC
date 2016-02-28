@@ -25,9 +25,7 @@
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     MarkRenderer *markRender = [[MarkRenderer alloc] initWithCGContext:context];
-    if (self.mark) {
-        [self.mark acceptMarkVisitor:markRender];
-    }
+    [self.mark acceptMarkVisitor:markRender];
 }
 
 

@@ -17,8 +17,6 @@
 
 @property (strong, nonatomic) IBOutlet CoordinatingViewController *coordinator;
 
-@property (nonatomic, retain) CanvasView *canvasView;
-@property (nonatomic, retain) Scribble *scribble;
 @property (nonatomic, assign) CGPoint startPoint;
 
 @end
@@ -29,6 +27,7 @@
 
 - (void)setScribble:(Scribble *)scribble {
     if (_scribble != scribble) {
+        [_scribble removeObserver:self forKeyPath:@"mark"];
         _scribble = scribble;
         [_scribble addObserver:self forKeyPath:@"mark" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     }
@@ -42,7 +41,12 @@
     
     self.scribble = [[Scribble alloc] init];
     
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    CGFloat redColor = [userDefaults floatForKey:@"red"];
+    CGFloat greenColor = [userDefaults floatForKey:@"green"];
+    CGFloat blueColor = [userDefaults floatForKey:@"blue"];
+    self.strokeSize = [userDefaults floatForKey:@"size"];
+    self.strokeColor = [UIColor colorWithRed:redColor green:greenColor blue:blueColor alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,25 +68,26 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint lastPoint = [[touches anyObject] previousLocationInView:self.canvasView];
-    CGPoint currentPoint = [[touches anyObject] locationInView:self.canvasView];
     if (CGPointEqualToPoint(self.startPoint, lastPoint)) {
         Stroke *stroke = [[Stroke alloc] init];
-        stroke.color = _strokeColor;
-        stroke.size = _strokeSize;
+        stroke.color = self.strokeColor;
+        stroke.size = self.strokeSize;
         [self.scribble addMark:stroke shouldAddToPreviousMark:NO];
-    } else {
-        Vertex *vertex = [[Vertex alloc] initWithLocation:currentPoint];
-        [self.scribble addMark:vertex shouldAddToPreviousMark:YES];
     }
+    
+    CGPoint currentPoint = [[touches anyObject] locationInView:self.canvasView];
+    Vertex *vertex = [[Vertex alloc] initWithLocation:currentPoint];
+    [self.scribble addMark:vertex shouldAddToPreviousMark:YES];
+    
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint previousPoint = [[touches anyObject] preciseLocationInView:self.canvasView];
+    CGPoint previousPoint = [[touches anyObject] previousLocationInView:self.canvasView];
     CGPoint currentPoint = [[touches anyObject] locationInView:self.canvasView];
     if (CGPointEqualToPoint(previousPoint, currentPoint)) {
         Dot *dot = [[Dot alloc] initWithLocation:currentPoint];
-        dot.color = _strokeColor;
-        dot.size = _strokeSize;
+        dot.color = self.strokeColor;
+        dot.size = self.strokeSize;
         [self.scribble addMark:dot shouldAddToPreviousMark:NO];
     }
     self.startPoint = CGPointZero;
@@ -95,11 +100,8 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if ([object isKindOfClass:[Scribble class]] && [keyPath isEqual:@"mark"]) {
         id<Mark> mark = change[NSKeyValueChangeNewKey];
-        if (![mark isKindOfClass:[NSNull class]]) {
-            [self.canvasView setMark:mark];
-            [self.canvasView setNeedsDisplay];
-            
-        }
+        [self.canvasView setMark:mark];
+        [self.canvasView setNeedsDisplay];
     }
 }
 

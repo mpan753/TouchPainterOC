@@ -17,6 +17,8 @@
 @synthesize location;
 @dynamic color, size, lastChild;
 
+//- (UIColor *)color{return self.color;};
+
 - (id)initWithLocation:(CGPoint)loc {
     if (self = [super init]) {
         [self setLocation:loc];

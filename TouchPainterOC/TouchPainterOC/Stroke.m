@@ -13,6 +13,13 @@
 @synthesize color, size;
 @dynamic location;
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.children = [@[] mutableCopy];
+    }
+    return self;
+}
+
 - (void)addMark:(id<Mark>)mark {
     [self.children addObject:mark];
 }
