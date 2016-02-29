@@ -9,6 +9,8 @@
 #import "ScribbleManager.h"
 #import "ScribbleMemento.h"
 #import "CoordinatingViewController.h"
+#import "ScribbleThumbnailViewImageProxy.h"
+#import "OpenScribbleCommand.h"
 
 #define kScribbleDataPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/data"]
 #define kScribbleThumbnailPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/thumbnails"]
@@ -73,8 +75,18 @@
     return [fileManager contentsOfDirectoryAtPath:[self scribbleThumbnailPath] error:&error];
 }
 
-//- (UIView *)scribbleThumbnailViewAtIndex:(NSInteger)index {
-//    
-//}
+- (UIView *)scribbleThumbnailViewAtIndex:(NSInteger)index {
+    ScribbleThumbnailViewImageProxy *loadedScribbleThumbnail = nil;
+    NSString *scribbleThumbnailPath = [[self scribbleThumbnailPaths] objectAtIndex:index];
+    NSString *scribblePath = [[self scribbleDataPaths] objectAtIndex:index];
+    if (scribbleThumbnailPath) {
+        loadedScribbleThumbnail = [[ScribbleThumbnailViewImageProxy alloc] init];
+        loadedScribbleThumbnail.scribblePath = [kScribbleDataPath stringByAppendingPathComponent:scribblePath];
+        loadedScribbleThumbnail.imagePath = [kScribbleThumbnailPath stringByAppendingPathComponent:scribbleThumbnailPath];
+        OpenScribbleCommand *touchCommand = [[OpenScribbleCommand alloc] init];
+        loadedScribbleThumbnail.touchCommand = touchCommand;
+    }
+    return loadedScribbleThumbnail;
+}
 
 @end

@@ -47,13 +47,11 @@ static CoordinatingViewController* sharedInstance = nil;
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)requestViewChangeByObject:(id)object
 {
+    UIViewController *windowRoot = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
     if ([object isKindOfClass:[UIBarButtonItem class]]) {
-        
-        UIViewController *windowRoot = [[[UIApplication sharedApplication] keyWindow] rootViewController];
         
         switch (((UIBarButtonItem *)object).tag) {
             case kButtonTagOpenPaletteView:
@@ -77,6 +75,9 @@ static CoordinatingViewController* sharedInstance = nil;
             }
                 break;
         }
+    } else {
+        [windowRoot dismissViewControllerAnimated:YES completion:nil];
+        self.activeViewController = self.canvasViewController;
     }
 }
 
