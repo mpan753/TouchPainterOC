@@ -11,7 +11,7 @@
 #import "MarkVisitor.h"
 
 
-@protocol Mark <NSObject>
+@protocol Mark <NSObject, NSCoding>
 
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, assign) CGFloat size;

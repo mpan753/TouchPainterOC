@@ -23,4 +23,17 @@
     [visitor visitDot:self];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.color = [aDecoder decodeObjectForKey:@"DotColor"];
+        self.size = [aDecoder decodeFloatForKey:@"DotSize"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:color forKey:@"DotColor"];
+    [aCoder encodeFloat:size forKey:@"DotSize"];
+}
+
 @end

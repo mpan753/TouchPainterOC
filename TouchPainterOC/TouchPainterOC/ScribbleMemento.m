@@ -25,4 +25,8 @@
     return self;
 }
 
+- (NSData *)data {
+    return [NSKeyedArchiver archivedDataWithRootObject:self.mark];
+}
+
 @end

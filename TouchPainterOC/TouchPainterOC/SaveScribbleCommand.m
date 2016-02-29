@@ -21,7 +21,7 @@
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Your scribble is saved" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
     

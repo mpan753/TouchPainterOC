@@ -17,8 +17,6 @@
 @synthesize location;
 @dynamic color, size, lastChild;
 
-//- (UIColor *)color{return self.color;};
-
 - (id)initWithLocation:(CGPoint)loc {
     if (self = [super init]) {
         [self setLocation:loc];
@@ -35,6 +33,17 @@
 
 - (void)acceptMarkVisitor:(id<MarkVisitor>)visitor {
     [visitor visitVertex:self];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.location = [[aDecoder decodeObjectForKey:@"VertexLocation"] CGPointValue];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:[NSValue valueWithCGPoint:self.location] forKey:@"VertexLocation"];
 }
 
 @end

@@ -39,4 +39,19 @@
     [visitor visitStroke:self];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.color = [aDecoder decodeObjectForKey:@"StrokeColor"];
+        self.size = [aDecoder decodeFloatForKey:@"StrokeSize"];
+        self.children = [aDecoder decodeObjectForKey:@"StrokeChildren"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:color forKey:@"StrokeColor"];
+    [aCoder encodeFloat:size forKey:@"StrokeSize"];
+    [aCoder encodeObject:self.children forKey:@"StrokeChildren"];
+}
+
 @end
