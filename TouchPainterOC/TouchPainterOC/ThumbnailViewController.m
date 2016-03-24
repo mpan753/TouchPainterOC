@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet CoordinatingViewController *coordinator;
 @property (strong, nonatomic) ScribbleManager *scribbleManager;
-
+@property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @end
 
@@ -25,7 +25,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.scribbleManager = [[ScribbleManager alloc] init];
-    
+    NSInteger numberOfScribbles = [self.scribbleManager numberOfScribbles];
+    self.navItem.title = [NSString stringWithFormat:
+                          numberOfScribbles > 1 ? @"%ld items" : @"%ld item",
+                          (long)numberOfScribbles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,8 +62,8 @@
     }
     
     NSInteger numberOfSupportedThumbnails = [ScribbleThumbnailCell numberOfPlaceHolders];
+    NSInteger thumbnailIndex = numberOfSupportedThumbnails * indexPath.row;
     NSInteger numberOfScribbles = [self.scribbleManager numberOfScribbles];
-    NSInteger thumbnailIndex = numberOfScribbles * indexPath.row;
     
     for (int i = 0; i < numberOfSupportedThumbnails && thumbnailIndex + i < numberOfScribbles; i++) {
         UIView *scribbleThumbnail = [self.scribbleManager scribbleThumbnailViewAtIndex:thumbnailIndex + i];

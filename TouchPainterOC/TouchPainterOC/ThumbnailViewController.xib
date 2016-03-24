@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThumbnailViewController">
             <connections>
                 <outlet property="coordinator" destination="53S-hF-sZI" id="Tpo-4E-L74"/>
+                <outlet property="navItem" destination="iJT-lU-ekU" id="fwr-aT-Yhy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

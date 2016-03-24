@@ -14,8 +14,8 @@
 
 @interface ScribbleThumbnailViewImageProxy : ScribbleThumbnailView
 
-//@property (nonatomic, readonly) UIImage *image;
-//@property (nonatomic, readonly) Scribble *scribble;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly) Scribble *scribble;
 @property (nonatomic, strong) Command *touchCommand;
 
 @end
