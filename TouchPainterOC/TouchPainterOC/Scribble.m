@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) id <Mark> mark;
 
-- (ScribbleMemento *) scribbleMementoWithCompleteSnapshot:(BOOL)hasCompleteSnapshot;
+- (ScribbleMemento *)scribbleMementoWithCompleteSnapshot:(BOOL)hasCompleteSnapshot;
 
 @end
 
@@ -26,11 +26,32 @@
 
 @synthesize mark = _parentMark;
 
++ (Scribble *)scribbleWithMemento:(ScribbleMemento *)aMemento {
+    Scribble *scribble = [[Scribble alloc] initWithMemento:aMemento];
+    return scribble;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         _parentMark = [[Stroke alloc] init];
     }
     return self;
+}
+
+- (instancetype) initWithMemento:(ScribbleMemento*)aMemento {
+    if (self = [super init]) {
+        if ([aMemento hasCompleteSnapshot]) {
+            self.mark = aMemento.mark;
+        } else {
+            _parentMark = [[Stroke alloc] init];
+            [self attachStateFromMemento:aMemento];
+        }
+    }
+    return self;
+}
+
+- (void) attachStateFromMemento:(ScribbleMemento *)memento {
+    [self addMark:memento.mark shouldAddToPreviousMark:NO];
 }
 
 - (void)addMark:(id<Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark {

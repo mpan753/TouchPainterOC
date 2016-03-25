@@ -39,14 +39,16 @@
             [v removeFromSuperview];
         }
     }
-    
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat gap = (screenWidth - 90 * 3) / 4;
     if (index < [ScribbleThumbnailCell numberOfPlaceHolders]) {
-        CGFloat x = index *90 + (index + 1) *12;
+        CGFloat x = index *90 + (index + 1) *gap;
         CGFloat y = 10;
         CGFloat width = 90;
         CGFloat height = 130;
         
         thumbnailView.frame = CGRectMake(x, y, width, height);
+//        thumbnailView.backgroundColor = [UIColor orangeColor];
         [self.contentView addSubview:thumbnailView];
     }
 }

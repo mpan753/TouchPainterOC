@@ -11,9 +11,6 @@
 
 @interface ScribbleMemento ()
 
-@property (nonatomic, strong) id<Mark> mark;
-@property (nonatomic, assign) BOOL hasCompleteSnapshot;
-
 @end
 
 @implementation ScribbleMemento

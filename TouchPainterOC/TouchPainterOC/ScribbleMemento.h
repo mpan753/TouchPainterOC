@@ -11,6 +11,9 @@
 
 @interface ScribbleMemento : NSObject
 
+@property (nonatomic, strong) id<Mark> mark;
+@property (nonatomic, assign) BOOL hasCompleteSnapshot;
+
 + (ScribbleMemento *)mementoWithData:(NSData *)data;
 
 - (id) initWithMark:(id <Mark>)aMark;

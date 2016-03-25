@@ -12,6 +12,8 @@
 
 @interface Scribble : NSObject
 
++ (Scribble *) scribbleWithMemento:(ScribbleMemento *)aMemento;
+
 - (void)addMark:(id <Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark;
 
 - (ScribbleMemento *) scribbleMemento;

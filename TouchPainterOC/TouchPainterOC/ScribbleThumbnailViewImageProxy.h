@@ -17,5 +17,6 @@
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) Scribble *scribble;
 @property (nonatomic, strong) Command *touchCommand;
+@property (nonatomic, assign) BOOL loadingThreadHasLaunched;
 
 @end
