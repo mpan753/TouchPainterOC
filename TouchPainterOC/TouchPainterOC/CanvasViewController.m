@@ -72,7 +72,15 @@
         Stroke *stroke = [[Stroke alloc] init];
         stroke.color = self.strokeColor;
         stroke.size = self.strokeSize;
-        [self.scribble addMark:stroke shouldAddToPreviousMark:NO];
+//        [self.scribble addMark:stroke shouldAddToPreviousMark:NO];
+        
+        NSInvocation *drawInvocation = [self drawScribbleInvocation];
+        [drawInvocation setArgument:&stroke atIndex:2];
+        
+        NSInvocation *undrawInvocation = [self undrawScribbleInvocation];
+        [undrawInvocation setArgument:&stroke atIndex:2];
+        
+        [self executeInvocation:drawInvocation withUndoInvocation:undrawInvocation];
     }
     
     CGPoint currentPoint = [[touches anyObject] locationInView:self.canvasView];
@@ -88,7 +96,14 @@
         Dot *dot = [[Dot alloc] initWithLocation:currentPoint];
         dot.color = self.strokeColor;
         dot.size = self.strokeSize;
-        [self.scribble addMark:dot shouldAddToPreviousMark:NO];
+//        [self.scribble addMark:dot shouldAddToPreviousMark:NO];
+        NSInvocation *drawInvocation = [self drawScribbleInvocation];
+        [drawInvocation setArgument:&dot atIndex:2];
+        
+        NSInvocation *undrawInvocation = [self undrawScribbleInvocation];
+        [undrawInvocation setArgument:&dot atIndex:2];
+        
+        [self executeInvocation:drawInvocation withUndoInvocation:undrawInvocation];
     }
     self.startPoint = CGPointZero;
 }
@@ -119,14 +134,38 @@
     }
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Draw Scribble Invocation Generation Methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInvocation *)drawScribbleInvocation {
+    NSMethodSignature *methodSignature = [self.scribble methodSignatureForSelector:@selector(addMark:shouldAddToPreviousMark:)];
+    NSInvocation *drawInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    [drawInvocation setTarget:self.scribble];
+    [drawInvocation setSelector:@selector(addMark:shouldAddToPreviousMark:)];
+    BOOL attachToPreviousMark = NO;
+    [drawInvocation setArgument:&attachToPreviousMark atIndex:3];
+    return drawInvocation;
 }
-*/
+
+- (NSInvocation *)undrawScribbleInvocation {
+    NSMethodSignature *methodSignature = [self.scribble methodSignatureForSelector:@selector(removeMark:)];
+    NSInvocation *undrawInvocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    [undrawInvocation setTarget:self.scribble];
+    [undrawInvocation setSelector:@selector(removeMark:)];
+    return undrawInvocation;
+}
+
+- (void) executeInvocation:(NSInvocation *)invocation withUndoInvocation:(NSInvocation *)undoInvocation {
+    [invocation retainArguments];
+    
+    [[self.undoManager prepareWithInvocationTarget:self] unexecuteInvocation:undoInvocation withRedoInvocation:invocation];
+    
+    [invocation invoke];
+}
+
+- (void) unexecuteInvocation:(NSInvocation *)invocation withRedoInvocation:(NSInvocation *)redoInvocation {
+    [[self.undoManager prepareWithInvocationTarget:self] executeInvocation:redoInvocation withUndoInvocation:invocation];
+    
+    [invocation invoke];
+}
 
 @end

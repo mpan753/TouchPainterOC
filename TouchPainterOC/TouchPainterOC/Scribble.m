@@ -60,6 +60,20 @@
         [[_parentMark lastChild] addMark:aMark];
     } else {
         [_parentMark addMark:aMark];
+        _incrementalMark = aMark;
+    }
+    [self didChangeValueForKey:@"mark"];
+}
+
+- (void)removeMark:(id<Mark>)aMark {
+    if (aMark == _parentMark) {
+        return;
+    }
+    [self willChangeValueForKey:@"mark"];
+    [_parentMark removeMark:aMark];
+    
+    if (_incrementalMark == aMark) {
+        _incrementalMark = nil;
     }
     [self didChangeValueForKey:@"mark"];
 }
@@ -69,7 +83,7 @@
 }
 
 - (ScribbleMemento *)scribbleMementoWithCompleteSnapshot:(BOOL)hasCompleteSnapshot {
-    id <Mark> mementoMark;
+    id <Mark> mementoMark = _incrementalMark;
     
     if (hasCompleteSnapshot) {
         mementoMark = _parentMark;

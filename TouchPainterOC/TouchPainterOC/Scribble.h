@@ -16,6 +16,8 @@
 
 - (void)addMark:(id <Mark>)aMark shouldAddToPreviousMark:(BOOL)shouldAddToPreviousMark;
 
+- (void)removeMark:(id <Mark>)aMark;
+
 - (ScribbleMemento *) scribbleMemento;
 
 @end
