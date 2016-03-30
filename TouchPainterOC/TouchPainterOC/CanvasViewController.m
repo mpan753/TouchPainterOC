@@ -105,11 +105,19 @@
     }
 }
 
-#pragma - 
+#pragma - Action
+
 - (IBAction) onCustomBarButtonHit:(CommandBarButton *)barButton {
     [[barButton commandM] execute];
 }
 
+- (IBAction)onBarButtonHit:(UIBarButtonItem *)button {
+    if (button.tag == 4) {
+        [self.undoManager undo];
+    } else if (button.tag == 5) {
+        [self.undoManager redo];
+    }
+}
 
 /*
 #pragma mark - Navigation

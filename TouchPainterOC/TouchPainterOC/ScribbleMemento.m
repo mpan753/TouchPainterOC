@@ -15,6 +15,12 @@
 
 @implementation ScribbleMemento
 
++ (ScribbleMemento *)mementoWithData:(NSData *)data {
+    id <Mark> restoredMark = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    ScribbleMemento *memento = [[ScribbleMemento alloc] initWithMark:restoredMark];
+    return memento;
+}
+
 - (instancetype) initWithMark:(id <Mark>)aMark {
     if (self = [super init]) {
         self.mark = aMark;

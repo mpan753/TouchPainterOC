@@ -25,7 +25,11 @@
 }
 
 - (void)removeMark:(id<Mark>)mark {
-    [self.children removeObject:mark];
+    if ([self.children containsObject:mark]) {
+        [self.children removeObject:mark];
+    } else {
+        [self.children makeObjectsPerformSelector:@selector(removeMark:) withObject:mark];
+    }
 }
 
 - (id<Mark>)lastChild {

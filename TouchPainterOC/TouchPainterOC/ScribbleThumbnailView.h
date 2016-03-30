@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Scribble.h"
+#import "ScribbleSource.h"
 
-@interface ScribbleThumbnailView : UIView
+@interface ScribbleThumbnailView : UIView <ScribbleSource>
 
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) Scribble *scribble;

@@ -83,7 +83,7 @@
         loadedScribbleThumbnail = [[ScribbleThumbnailViewImageProxy alloc] init];
         loadedScribbleThumbnail.scribblePath = [kScribbleDataPath stringByAppendingPathComponent:scribblePath];
         loadedScribbleThumbnail.imagePath = [kScribbleThumbnailPath stringByAppendingPathComponent:scribbleThumbnailPath];
-        OpenScribbleCommand *touchCommand = [[OpenScribbleCommand alloc] init];
+        OpenScribbleCommand *touchCommand = [[OpenScribbleCommand alloc] initWithScribbleSource:loadedScribbleThumbnail];
         loadedScribbleThumbnail.touchCommand = touchCommand;
     }
     return loadedScribbleThumbnail;

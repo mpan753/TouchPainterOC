@@ -46,9 +46,17 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="yRa-8X-vxI"/>
-                        <barButtonItem tag="4" image="undo" style="plain" id="NzO-ug-6WQ"/>
+                        <barButtonItem tag="4" image="undo" style="plain" id="NzO-ug-6WQ">
+                            <connections>
+                                <action selector="onBarButtonHit:" destination="-1" id="tRI-dZ-0GR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="lKH-6J-xWj"/>
-                        <barButtonItem tag="5" image="redo" style="plain" id="4V3-IT-itm"/>
+                        <barButtonItem tag="5" image="redo" style="plain" id="4V3-IT-itm">
+                            <connections>
+                                <action selector="onBarButtonHit:" destination="-1" id="MUf-Q7-hEk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="X5X-Sm-5Y5"/>
                     </items>
                 </toolbar>
